@@ -1,414 +1,242 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>De Bleu Beauty Supply - Distribution Proposal</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #e0e5ec;
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
-    .container {
-      width: 90%;
-      max-width: 900px;
-      padding: 30px;
-      border-radius: 30px;
-      background: #e0e5ec;
-      box-shadow: 9px 9px 16px #b8bcc2, -9px -9px 16px #ffffff;
-      overflow: hidden;
-      position: relative;
-    }
-    .slide {
-      display: none;
-      animation: fade 0.6s ease-in-out;
-    }
-    .slide.active {
-      display: block;
-    }
-    @keyframes fade {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-    .buttons {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
-    button {
-      border: none;
-      padding: 12px 20px;
-      border-radius: 15px;
-      background: #e0e5ec;
-      box-shadow: 5px 5px 10px #b8bcc2, -5px -5px 10px #ffffff;
-      cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    button:hover {
-      box-shadow: inset 5px 5px 10px #b8bcc2, inset -5px -5px 10px #ffffff;
-    }
-    h1, h2, h3 {
-      color: #2a2a72;
-    }
-    .highlight {
-      color: #0f9b8e;
-      font-weight: bold;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 15px;
-    }
-    table th, table td {
-      padding: 10px;
-      text-align: center;
-      border-bottom: 1px solid #ccc;
-    }
-    .chart-container {
-      width: 100%;
-      height: 250px;
-      margin: 20px 0;
-    }
-    .image-placeholder {
-      width: 100%;
-      height: 250px;
-      border-radius: 20px;
-      margin-top: 15px;
-      background: #ccc;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-    .image-placeholder.logo-container {
-      background-color: #ffffff;
-      padding: 30px;
-      box-sizing: border-box;
-    }
-    .image-placeholder.logo-container img {
-      object-fit: contain;
-    }
-    .image-placeholder img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease-in-out;
-    }
-    .image-placeholder:hover img {
-      transform: scale(1.05);
-    }
-    a {
-      color: #0f9b8e;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    #page-counter {
-      text-align: center;
-      margin-top: 15px;
-      color: #666;
-      font-weight: 500;
-    }
-  </style>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rifa de 100 Números</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Estilo para un efecto de "neón" suave en los números disponibles */
+        .number-available:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.7);
+        }
+        /* Clase para el estado "tomado" */
+        .number-taken {
+            background-color: #4b5563 !important; /* gris oscuro */
+            color: #d1d5db; /* gris claro */
+            cursor: not-allowed;
+            text-decoration: line-through;
+            transform: none !important;
+            box-shadow: none !important;
+        }
+        /* Animación para el modal */
+        .modal-enter {
+            animation: fadeIn 0.3s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
 </head>
-<body>
-  <div class="container">
+<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen p-4">
 
-    <!-- Slide 1 -->
-    <div class="slide active">
-      <h1>De Bleu Beauty Supply</h1>
-      <p><strong>Phone:</strong> +1 (345) 943-2887<br>
-         <strong>Mobile:</strong> +1 (345) 924-8728</p>
-      <div class="image-placeholder logo-container">
-        <img src="https://debleusupply.ky/wp-content/uploads/presentation/debleu_logo-SUPPLY.png" alt="Company Logo" id="logo-image">
-      </div>
-      <h3>Exclusive Distribution Proposal - Cayman Islands</h3>
-    </div>
-
-    <!-- Slide 2 -->
-    <div class="slide">
-      <h2>About Us</h2>
-      <p><strong>Founded in 2010</strong>, <span class="highlight">De Bleu Beauty Supply</span> is a Distributor and retailer store that has served the Cayman Islands market for over 15 years. We are committed to understanding and addressing the needs and expectations of our customers, employees, and supplier partners in all facets of our business.</p>
-      <p>We carry hundreds of lines from world-renowned brands, including:</p>
-      <p><em>Mia Secret, Kiara Sky, All Nutrient, Tec Italy, Oya Beauty, Bentouch, Framar, Kashmir Hair System, Ebin New York, Skala, Karseell, Legacy Nails, DND, OPI, Nevada, Evox, Evok, Batana, La Palm Spa, Avry Beauty, Pronail, Maybelline, Blomer</em> and many more.</p>
-      <div class="image-placeholder">
-        <img src="https://debleusupply.ky/wp-content/uploads/presentation/presentation_supply_02.jpg" alt="De Bleu Beauty Supply Location" id="about-us-image">
-      </div>
-    </div>
-    
-    <!-- NEW Slide 3 -->
-    <div class="slide">
-      <h2>Our Role as Distributors</h2>
-      <p>We are the premier distributors for professional beauty products in the Cayman Islands. We carry products exclusively for this market, ensuring focused marketing and brand growth. We operate our own showroom and sell directly to Professionals, Consumers, and other retailers.</p>
-      <p>We are Distributors</p>
-      <div class="image-placeholder">
-        <img src="https://debleusupply.ky/wp-content/uploads/presentation/presentation_supply_03.jpg" alt="Our Showroom" id="distributors-image">
-      </div>
-    </div>
-
-    <!-- Slide 4 -->
-    <div class="slide">
-      <h2>Cayman Islands Demographics</h2>
-      <ul>
-        <li><strong>Population:</strong> A targeted market of ~75,000 residents.</li>
-        <li><strong>Tourism:</strong> A powerful economic driver, making up ~50% of the economy with 235,000+ overnight visitors.</li>
-        <li><strong>GDP per capita:</strong> $97,749 (2023)</li>
-        <li><strong>Consumer profile:</strong> ~30% mix of brown and white skin tones, ideal for diverse foundation and powder ranges.</li>
-      </ul>
-      <div class="chart-container">
-        <canvas id="demographicsChart"></canvas>
-      </div>
-    </div>
-
-    <!-- Slide 5 -->
-    <div class="slide">
-      <h2>Our Market Position</h2>
-      <ol>
-        <li>We are the <strong>Main Distributor in the Cayman Islands</strong> for Nails: Mia secret, Kiara sky, Dm, legacy nails Hair, All nutrient, Tec Italy, Kashmir</a>.</li>
-        <li>We distribute products exclusively for the Cayman Islands market.</li>
-        <li>We operate our own showroom and sell directly to Professionals, Consumers, and Retailers.</li>
-        <li>We currently carry brands like <em>Revlon, Maybelline, LA Colors</em> and seek a direct partnership with a <strong>Vegan brand</strong>.</li>
-        <li>Our main business focuses on <strong>hair, nails, and makeup</strong>.</li>
-        <li>We actively supply the top Beauty Salons, Nail Salons, and Hair Salons on the island.</li>
-      </ol>
-      <div class="image-placeholder">
-        <img src="https://debleusupply.ky/wp-content/uploads/presentation/Graphofmarketposition.png" alt="Graph of market position" id="market-position-image">
-      </div>
-    </div>
-
-    <!-- NEW Slide 6 -->
-    <div class="slide">
-        <h2>The Palladio Partnership Opportunity</h2>
-        <p>Our goal is to introduce a premier, high-quality vegan makeup line to the Cayman Islands. This is why we are specifically contacting <span class="highlight">PALLADIO BEAUTY GROUP</span>.</p>
-        <p>We believe Palladio's commitment to vegan, cruelty-free products aligns perfectly with current market trends and the sophisticated demands of both residents and tourists in our luxury market.</p>
-        <div class="image-placeholder">
-            <img src="https://debleusupply.ky/wp-content/uploads/presentation/Vegan-Makeup-Products.jpg" alt="Vegan Makeup Products" id="palladio-partnership-image">
+    <div class="w-full max-w-4xl mx-auto">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-blue-400">Rifa Especial</h1>
+            <p class="text-gray-400 mt-2 text-lg">Elige tu número de la suerte del 00 al 99</p>
+        </header>
+        
+        <!-- Cuadrícula de números -->
+        <div id="loading-spinner" class="text-center">
+            <svg class="animate-spin h-10 w-10 text-white mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <p class="mt-2">Cargando números...</p>
         </div>
-    </div>
-    
-    <!-- Slide 7 -->
-    <div class="slide">
-      <h2>Beauty and Wellness Market</h2>
-      <p>The global beauty market was valued at <strong>$446 billion in 2023</strong> and is projected to reach <strong>$829.2 billion by 2033</strong> with a CAGR of 6.88%.</p>
-      <p>The Cayman Islands' luxury destination status offers a unique entry point for premium beauty brands, driven by tourism and wellness trends.</p>
-      <table>
-        <tr><th>Segment</th><th>Market Share</th></tr>
-        <tr><td>Skincare</td><td>40%</td></tr>
-        <tr><td>Haircare</td><td>20%</td></tr>
-        <tr><td>Makeup</td><td>18%</td></tr>
-        <tr><td>Fragrances</td><td>12%</td></tr>
-        <tr><td>Others</td><td>10%</td></tr>
-      </table>
-      <div class="chart-container">
-        <canvas id="marketChart"></canvas>
-      </div>
-    </div>
+        <div id="number-grid" class="hidden grid grid-cols-5 sm:grid-cols-10 gap-2 md:gap-4">
+            <!-- Los números se generarán aquí con JavaScript -->
+        </div>
 
-    <!-- NEW Slide 8 -->
-    <div class="slide">
-        <h2>Our Strong Client Network</h2>
-        <p>Our business is strong in nail and spa products. We are the trusted supplier for the leading salons in the Cayman Islands, including:</p>
-        <ul>
-            <li>Beauty Nail Salons</li>
-            <li>Hair Salons</li>
-            <li>Get Nails</li>
-            <li>Tips and Toes</li>
-            <li>Nails Room</li>
-            <li>Fosu Hair & Beauty</li>
-            <li>Cappelli (#1 Nails Beauty Shop in Cayman Islands)</li>
-        </ul>
-        <div class="image-placeholder">
-            <img src="https://debleusupply.ky/wp-content/uploads/presentation/Salon_Interior.jpg" alt="Salon Interior" id="client-network-image">
+        <!-- Información de la Lotería -->
+        <div class="text-center mt-8 px-4">
+            <h2 class="text-2xl md:text-3xl font-bold text-blue-300">Elige tus Números Favoritos</h2>
+            <p class="text-gray-400 mt-2 text-lg">Juega este 03 de Octubre de 2025 a las 10:00 PM</p>
+            <p class="text-gray-400 mt-1 text-lg">con las 2 últimas cifras de la Lotería de</p>
+            <p class="text-green-400 font-bold text-4xl mt-2">MEDELLIN</p>
         </div>
     </div>
 
-    <!-- NEW Slide 9 -->
-    <div class="slide">
-        <h2>Go-To-Market Strategy</h2>
-        <p>Our business plan is simple and effective. Upon partnership, we will immediately launch a <span class="highlight">dedicated Palladio Beauty stand</span> inside our own high-traffic retail shop.</p>
-        <p>This ensures instant brand visibility, allows customers to test products, and establishes a strong market presence from day one.</p>
-        <div class="image-placeholder">
-            <img src="https://debleusupply.ky/wp-content/uploads/presentation/Retail_Display_Stan.jpg" alt="Retail Display Stand" id="go-to-market-image">
+    <!-- Modal para el número seleccionado -->
+    <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 modal-enter">
+        <div class="bg-gray-800 rounded-2xl shadow-2xl p-8 md:p-12 text-center relative max-w-md w-full">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-white text-3xl">&times;</button>
+            <p class="text-gray-400 text-xl mb-4">Has seleccionado el número:</p>
+            <div id="selected-number-display" class="text-8xl md:text-9xl font-bold text-blue-400 my-8"></div>
+            <a id="whatsapp-link" href="#" target="_blank" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-6 rounded-lg text-xl inline-flex items-center justify-center transition-transform transform hover:scale-105">
+                <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.487 5.235 3.487 8.413.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.433-9.89-9.889-9.89-5.452 0-9.887 4.434-9.889 9.891.001 2.23.652 4.28 1.889 5.946l-1.161 4.254 4.408-1.157z"/></svg>
+                Quiero este número
+            </a>
         </div>
     </div>
 
-    <!-- NEW Slide 10 -->
-    <div class="slide">
-        <h2>Logistics & Operations</h2>
-        <p>We have a streamlined and reliable logistics process. We work with our own trusted forwarder, <span class="highlight">Seaboard Marine in Medley, Florida</span>, ensuring smooth and timely shipments to the island.</p>
-        <p>For payments, we are fully equipped to handle international transactions via <strong>wire transfer</strong>
-        👉 “Kindly be advised that the import duty rate for beauty products in the Cayman Islands is 22%.”.</p>
-        <div class="image-placeholder">
-            <img src="https://debleusupply.ky/wp-content/uploads/presentation/Logistics_and_Shipping.jpg" alt="Logistics and Shipping" id="logistics-image">
-        </div>
-    </div>
+    <script type="module">
+        // --- IMPORTACIONES DE FIREBASE ---
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getFirestore, collection, doc, onSnapshot, setDoc } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        import { getAuth, signInAnonymously, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        
+        // --- CONFIGURACIÓN ---
+        // ¡¡¡IMPORTANTE!!! Reemplaza 'TU_NUMERO_DE_WHATSAPP' con tu número, incluyendo el código de país.
+        // Ejemplo: '573101234567' para Colombia. Sin el '+' o espacios.
+        const WHATSAPP_NUMBER = 'TU_NUMERO_DE_WHATSAPP';
+        
+        // --- VARIABLES GLOBALES ---
+        const grid = document.getElementById('number-grid');
+        const modal = document.getElementById('modal');
+        const selectedNumberDisplay = document.getElementById('selected-number-display');
+        const whatsappLink = document.getElementById('whatsapp-link');
+        const closeModalButton = document.getElementById('close-modal');
+        const loadingSpinner = document.getElementById('loading-spinner');
+        let currentSelectedNumber = null;
 
-    <!-- Slide 11 -->
-    <div class="slide">
-      <h2>Why Partner with Us?</h2>
-      <ul>
-        <li>Established presence in the Cayman Islands for over 15 years</li>
-        <li>Trusted by professionals and consumers alike</li>
-        <li>Broad portfolio of international beauty brands</li>
-        <li>Strong, established logistics and retail network</li>
-        <li>One-stop solution for professionals with a proven client base</li>
-        <li>Strong in nail and spa products, serving top Nail Salons and Hair Salons</li>
-        <li>Focused on expanding into <strong>Vegan Makeup</strong>, aligning with global trends</li>
-      </ul>
-      <div class="image-placeholder">
-        <img src="https://debleusupply.ky/wp-content/uploads/presentation/why-partner.jpg" alt="Image of a partnership" id="why-partner-image">
-      </div>
-    </div>
+        // --- INICIALIZACIÓN DE FIREBASE ---
+        // Esta sección ahora detecta si está en un entorno de vista previa o no.
+        // PARA TU HOSTING 'vendety.com': Si ves errores en tu web, reemplaza el '{}' de la segunda línea
+        // con el objeto 'firebaseConfig' que obtuviste de la consola de Firebase.
+        const firebaseConfigString = typeof __firebase_config !== 'undefined' ? __firebase_config : '{}';
+        const firebaseConfig = JSON.parse(firebaseConfigString);
 
-    <!-- Slide 12 -->
-    <div class="slide">
-      <h2>Next Steps</h2>
-      <ol>
-        <li>Develop a tailored marketing strategy for Palladio Beauty.</li>
-        <li>Define terms for an exclusive distribution agreement.</li>
-        <li>Coordinate initial product order and shipping logistics.</li>
-        <li>Launch the in-store promotional stand and marketing campaigns.</li>
-      </ol>
-      <p><strong>Let's grow together and bring premier vegan beauty to the Cayman Islands.</strong></p>
-      <div class="image-placeholder">
-        <img src="https://debleusupply.ky/wp-content/uploads/presentation/future_growth.jpg" id="next-steps-image">
-      </div>
-    </div>
-
-    <!-- Navigation -->
-    <div class="buttons">
-      <button onclick="prevSlide()">Previous</button>
-      <button onclick="nextSlide()">Next</button>
-    </div>
-
-    <!-- Page Counter -->
-    <div id="page-counter"></div>
-  </div>
-
-  <script>
-    let current = 0;
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
-    const pageCounter = document.getElementById('page-counter');
-
-    function showSlide(index) {
-      slides.forEach((s, i) => s.classList.remove('active'));
-      slides[index].classList.add('active');
-      if (pageCounter) {
-        pageCounter.textContent = `${index + 1} / ${totalSlides}`;
-      }
-      renderCharts(index);
-    }
-
-    function nextSlide() {
-      current = (current + 1) % totalSlides;
-      showSlide(current);
-    }
-
-    function prevSlide() {
-      current = (current - 1 + totalSlides) % totalSlides;
-      showSlide(current);
-    }
-
-    const charts = {};
-
-    function renderCharts(index) {
-        // Find the correct index for the charts after adding new slides
-        const demographicsSlideIndex = Array.from(slides).findIndex(slide => slide.querySelector('#demographicsChart'));
-        const marketSlideIndex = Array.from(slides).findIndex(slide => slide.querySelector('#marketChart'));
-
-      if (index === demographicsSlideIndex) {
-        if (!charts.demographics) {
-          const ctx = document.getElementById('demographicsChart').getContext('2d');
-          charts.demographics = new Chart(ctx, {
-            type: 'bar',
-            data: {
-              labels: ['Population', 'Tourism (visitors)'],
-              datasets: [{
-                label: 'Cayman Islands Key Figures',
-                data: [75000, 235000], // Updated data
-                backgroundColor: ['rgba(42, 42, 114, 0.8)', 'rgba(15, 155, 142, 0.8)'],
-                borderColor: ['rgba(42, 42, 114, 1)', 'rgba(15, 155, 142, 1)'],
-                borderWidth: 1
-              }]
-            },
-            options: {
-              responsive: true,
-              maintainAspectRatio: false,
-              plugins: {
-                legend: { display: false },
-                title: {
-                  display: true,
-                  text: 'Population and Tourism (2023)',
-                  color: '#2a2a72'
-                }
-              },
-              scales: {
-                y: {
-                  beginAtZero: true
-                }
-              }
+        // Las variables `appId` y `initialAuthToken` son para el entorno de vista previa.
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'mi-rifa-vendety'; 
+        const initialAuthToken = typeof __initial_auth_token !== 'undefined' ? __initial_auth_token : null;
+        
+        let db;
+        try {
+            // Si la configuración está vacía (en tu hosting, antes de que la pegues), muestra un error amigable.
+            if (!firebaseConfig.apiKey) {
+                throw new Error("Configuración de Firebase no encontrada. Sigue la guía para añadirla.");
             }
-          });
+
+            const app = initializeApp(firebaseConfig);
+            db = getFirestore(app);
+            const auth = getAuth(app);
+            
+            // Autenticar al usuario. Usa un token especial si está disponible (en vista previa), si no, de forma anónima.
+            if (initialAuthToken) {
+                await signInWithCustomToken(auth, initialAuthToken);
+            } else {
+                await signInAnonymously(auth);
+            }
+
+            console.log("Firebase initialized and user authenticated.");
+            initializeRaffle();
+
+        } catch (error) {
+            console.error("Error initializing Firebase:", error);
+            // Mostrar un mensaje más claro al usuario final.
+            if (error.message.includes("api-key-not-valid") || error.message.includes("Configuración de Firebase")) {
+                loadingSpinner.innerHTML = `<p class="text-yellow-400 text-center"><b>Error de configuración:</b><br>Parece que la información de la base de datos no es correcta. Por favor, sigue la guía de configuración de Firebase para pegar la información correcta en el código.</p>`;
+            } else {
+                loadingSpinner.innerHTML = '<p class="text-red-500">Error al conectar con el servidor. Por favor, recarga la página.</p>';
+            }
         }
-      } else if (index === marketSlideIndex) {
-        if (!charts.market) {
-          const ctx = document.getElementById('marketChart').getContext('2d');
-          const data = {
-            labels: ['Skincare', 'Haircare', 'Makeup', 'Fragrances', 'Others'],
-            datasets: [{
-              label: 'Market Share (%)',
-              data: [40, 20, 18, 12, 10],
-              backgroundColor: [
-                '#2a2a72',
-                '#0f9b8e',
-                '#e84118',
-                '#fbc531',
-                '#4cd137'
-              ],
-              borderColor: '#e0e5ec',
-              borderWidth: 2
-            }]
-          };
-          const config = {
-            type: 'pie',
-            data: data,
-            options: {
-              responsive: true,
-              maintainAspectRatio: false,
-              plugins: {
-                legend: {
-                  position: 'bottom',
-                },
-                title: {
-                  display: true,
-                  text: 'Global Beauty Market Share (2023)',
-                  color: '#2a2a72'
+
+        function initializeRaffle() {
+            // --- GENERACIÓN DE LA CUADRÍCULA ---
+            for (let i = 0; i < 100; i++) {
+                const number = i.toString().padStart(2, '0');
+                const numberEl = document.createElement('div');
+                numberEl.textContent = number;
+                numberEl.id = `number-${number}`;
+                numberEl.className = 'number-available text-center p-3 md:p-4 rounded-lg bg-gray-800 cursor-pointer font-semibold text-xl transition-all duration-300';
+                numberEl.addEventListener('click', () => handleNumberClick(number));
+                grid.appendChild(numberEl);
+            }
+
+            // --- SINCRONIZACIÓN EN TIEMPO REAL CON FIRESTORE ---
+            const collectionPath = `artifacts/${appId}/public/data/raffle_numbers`;
+            const numbersCollection = collection(db, collectionPath);
+
+            onSnapshot(numbersCollection, (snapshot) => {
+                // Primero, reseteamos todos los números a 'disponible'
+                document.querySelectorAll('.number-taken').forEach(el => {
+                    el.classList.remove('number-taken');
+                    el.classList.add('number-available');
+                    el.dataset.taken = 'false';
+                });
+                
+                // Luego, marcamos los que están en la base de datos como 'tomados'
+                snapshot.forEach((doc) => {
+                    const numberId = doc.id;
+                    const numberEl = document.getElementById(`number-${numberId}`);
+                    if (numberEl) {
+                        numberEl.classList.add('number-taken');
+                        numberEl.classList.remove('number-available');
+                        numberEl.dataset.taken = 'true';
+                    }
+                });
+
+                // Mostrar cuadrícula y ocultar spinner
+                loadingSpinner.style.display = 'none';
+                grid.classList.remove('hidden');
+
+            }, (error) => {
+                console.error("Error listening to number changes:", error);
+                loadingSpinner.innerHTML = '<p class="text-red-500">Error al sincronizar los números.</p>';
+            });
+        }
+        
+        // --- MANEJO DE EVENTOS ---
+        function handleNumberClick(number) {
+            const numberEl = document.getElementById(`number-${number}`);
+            if (numberEl.dataset.taken === 'true') {
+                return; // No hacer nada si el número ya está tomado
+            }
+            currentSelectedNumber = number;
+            selectedNumberDisplay.textContent = number;
+            
+            const message = encodeURIComponent(`Hola, quiero participar en la rifa con el número #${number}`);
+            whatsappLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            currentSelectedNumber = null;
+        }
+
+        async function selectNumberForWhatsapp() {
+            if (currentSelectedNumber && db) {
+                try {
+                    const collectionPath = `artifacts/${appId}/public/data/raffle_numbers`;
+                    const numberDocRef = doc(db, collectionPath, currentSelectedNumber);
+                    
+                    // Guardamos el número en la base de datos.
+                    // onSnapshot se encargará de actualizar la UI para todos.
+                    await setDoc(numberDocRef, {
+                        chosenAt: new Date().toISOString()
+                    });
+                    
+                    console.log(`Número ${currentSelectedNumber} reservado.`);
+                    
+                    // Cerramos el modal después de guardar
+                    closeModal();
+
+                } catch (error) {
+                    console.error("Error saving number:", error);
+                    alert("Hubo un error al reservar tu número. Inténtalo de nuevo.");
                 }
-              }
-            },
-          };
-          charts.market = new Chart(ctx, config);
+            }
         }
-      }
-    }
-    
-    // Initialize the presentation on the first slide
-    window.onload = function() {
-        showSlide(0);
-    }
-  </script>
+        
+        closeModalButton.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+             if (e.target === modal) {
+                closeModal();
+            }
+        });
+        whatsappLink.addEventListener('click', selectNumberForWhatsapp);
+
+    </script>
 </body>
 </html>
+
 
