@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>De Bleu Beauty Supply - Propuesta de Distribución</title>
+  <title>De Bleu Beauty Supply - Distribution Proposal</title>
   <style>
     body {
       margin: 0;
@@ -88,6 +88,14 @@
       justify-content: center;
       overflow: hidden;
     }
+    .image-placeholder.logo-container {
+      background-color: #ffffff;
+      padding: 30px;
+      box-sizing: border-box;
+    }
+    .image-placeholder.logo-container img {
+      object-fit: contain;
+    }
     .image-placeholder img {
       width: 100%;
       height: 100%;
@@ -97,129 +105,209 @@
     .image-placeholder:hover img {
       transform: scale(1.05);
     }
+    a {
+      color: #0f9b8e;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    #page-counter {
+      text-align: center;
+      margin-top: 15px;
+      color: #666;
+      font-weight: 500;
+    }
   </style>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="container">
 
-    <!-- Diapositiva 1 -->
+    <!-- Slide 1 -->
     <div class="slide active">
       <h1>De Bleu Beauty Supply</h1>
-      <p><strong>Teléfono:</strong> +1 (345) 943-2887<br>
-         <strong>Celular:</strong> +1 (345) 924-8728</p>
-      <div class="image-placeholder">
-        <img src="https://placehold.co/800x450/2a2a72/ffffff?text=De+Bleu+Beauty+Supply+Logo" alt="Logotipo de la compañía">
+      <p><strong>Phone:</strong> +1 (345) 943-2887<br>
+         <strong>Mobile:</strong> +1 (345) 924-8728</p>
+      <div class="image-placeholder logo-container">
+        <img src="https://debleusupply.ky/wp-content/uploads/presentation/debleu_logo-SUPPLY.png" alt="Company Logo" id="logo-image">
       </div>
-      <h3>Propuesta de Distribución Exclusiva - Islas Caimán</h3>
+      <h3>Exclusive Distribution Proposal - Cayman Islands</h3>
     </div>
 
-    <!-- Diapositiva 2 -->
+    <!-- Slide 2 -->
     <div class="slide">
-      <h2>Sobre Nosotros</h2>
-      <p><strong>Fundada en 2010</strong>, <span class="highlight">De Bleu Beauty Supply</span> es una tienda mayorista y minorista que ha servido al mercado de las Islas Caimán por más de 15 años. Nos comprometemos a entender y abordar las necesidades y expectativas de nuestros clientes, empleados y socios proveedores en todas las facetas de nuestro negocio.</p>
-      <p>Disponemos de cientos de líneas de marcas de renombre mundial, incluyendo:</p>
-      <p><em>Mia Secret, Kiara Sky, All Nutrient, Tec Italy, Oya Beauty, Bentouch, Framar, Kashmir Hair System, Ebin New York, Skala, Karseell, Legacy Nails, DND, OPI, Nevada, Evox, Evok, Batana, La Palm Spa, Avry Beauty, Pronail, Maybelline, Blomer</em> y muchas más.</p>
+      <h2>About Us</h2>
+      <p><strong>Founded in 2010</strong>, <span class="highlight">De Bleu Beauty Supply</span> is a Distributor and retailer store that has served the Cayman Islands market for over 15 years. We are committed to understanding and addressing the needs and expectations of our customers, employees, and supplier partners in all facets of our business.</p>
+      <p>We carry hundreds of lines from world-renowned brands, including:</p>
+      <p><em>Mia Secret, Kiara Sky, All Nutrient, Tec Italy, Oya Beauty, Bentouch, Framar, Kashmir Hair System, Ebin New York, Skala, Karseell, Legacy Nails, DND, OPI, Nevada, Evox, Evok, Batana, La Palm Spa, Avry Beauty, Pronail, Maybelline, Blomer</em> and many more.</p>
       <div class="image-placeholder">
-        <img src="https://placehold.co/800x450/0f9b8e/ffffff?text=Surtido+de+Productos+de+Belleza" alt="Variedad de productos de belleza">
+        <img src="https://debleusupply.ky/wp-content/uploads/presentation/presentation_supply_02.jpg" alt="De Bleu Beauty Supply Location" id="about-us-image">
+      </div>
+    </div>
+    
+    <!-- NEW Slide 3 -->
+    <div class="slide">
+      <h2>Our Role as Distributors</h2>
+      <p>We are the premier distributors for professional beauty products in the Cayman Islands. We carry products exclusively for this market, ensuring focused marketing and brand growth. We operate our own showroom and sell directly to Professionals, Consumers, and other retailers.</p>
+      <p>We are Distributors</p>
+      <div class="image-placeholder">
+        <img src="https://debleusupply.ky/wp-content/uploads/presentation/presentation_supply_03.jpg" alt="Our Showroom" id="distributors-image">
       </div>
     </div>
 
-    <!-- Diapositiva 3 -->
+    <!-- Slide 4 -->
     <div class="slide">
-      <h2>Demografía de las Islas Caimán</h2>
+      <h2>Cayman Islands Demographics</h2>
       <ul>
-        <li><strong>Población:</strong> ~84,700 residentes (aprox. 75,000 citados en informes de negocios)</li>
-        <li><strong>Turismo:</strong> ~50% de la economía, 235,000+ visitantes que pernoctan (primera mitad de 2023)</li>
-        <li><strong>PIB per cápita:</strong> $97,749 (2023)</li>
-        <li><strong>Perfil del consumidor:</strong> ~30% mezcla de población de color y blanca para las preferencias de color de productos</li>
+        <li><strong>Population:</strong> A targeted market of ~75,000 residents.</li>
+        <li><strong>Tourism:</strong> A powerful economic driver, making up ~50% of the economy with 235,000+ overnight visitors.</li>
+        <li><strong>GDP per capita:</strong> $97,749 (2023)</li>
+        <li><strong>Consumer profile:</strong> ~30% mix of brown and white skin tones, ideal for diverse foundation and powder ranges.</li>
       </ul>
       <div class="chart-container">
         <canvas id="demographicsChart"></canvas>
       </div>
     </div>
 
-    <!-- Diapositiva 4 -->
+    <!-- Slide 5 -->
     <div class="slide">
-      <h2>Nuestra Posición en el Mercado</h2>
+      <h2>Our Market Position</h2>
       <ol>
-        <li>Somos el <strong>principal distribuidor en las Islas Caimán</strong> para Uñas: <em>Mia Secret</em></li>
-        <li>Distribuimos productos exclusivamente para el mercado de las Islas Caimán</li>
-        <li>Operamos nuestro propio showroom y vendemos directamente a Profesionales, Consumidores y Minoristas</li>
-        <li>Representamos marcas como <em>Revlon, Maybelline, LA Colors</em> (no directamente) y queremos enfocarnos directamente en <strong>marcas Veganas</strong></li>
-        <li>Nuestro negocio principal se centra en <strong>cabello, uñas y maquillaje</strong></li>
-        <li>Suministramos activamente a Salones de Belleza, Salones de Uñas y Peluquerías</li>
+        <li>We are the <strong>Main Distributor in the Cayman Islands</strong> for Nails: Mia secret, Kiara sky, Dm, legacy nails Hair, All nutrient, Tec Italy, Kashmir</a>.</li>
+        <li>We distribute products exclusively for the Cayman Islands market.</li>
+        <li>We operate our own showroom and sell directly to Professionals, Consumers, and Retailers.</li>
+        <li>We currently carry brands like <em>Revlon, Maybelline, LA Colors</em> and seek a direct partnership with a <strong>Vegan brand</strong>.</li>
+        <li>Our main business focuses on <strong>hair, nails, and makeup</strong>.</li>
+        <li>We actively supply the top Beauty Salons, Nail Salons, and Hair Salons on the island.</li>
       </ol>
       <div class="image-placeholder">
-        <img src="https://placehold.co/800x450/4a4a94/ffffff?text=Posición+en+el+Mercado" alt="Gráfica de la posición en el mercado">
+        <img src="https://debleusupply.ky/wp-content/uploads/presentation/Graphofmarketposition.png" alt="Graph of market position" id="market-position-image">
       </div>
     </div>
 
-    <!-- Diapositiva 5 -->
+    <!-- NEW Slide 6 -->
     <div class="slide">
-      <h2>Mercado de Belleza y Bienestar</h2>
-      <p>El mercado global de la belleza fue valorado en <strong>$446 mil millones en 2023</strong> y se proyecta que alcanzará los <strong>$829.2 mil millones para 2033</strong> con un CAGR del 6.88%.</p>
-      <p>El estatus de destino de lujo de las Islas Caimán ofrece un punto de entrada único para marcas de belleza premium, impulsado por el turismo y las tendencias de bienestar.</p>
+        <h2>The Palladio Partnership Opportunity</h2>
+        <p>Our goal is to introduce a premier, high-quality vegan makeup line to the Cayman Islands. This is why we are specifically contacting <span class="highlight">PALLADIO BEAUTY GROUP</span>.</p>
+        <p>We believe Palladio's commitment to vegan, cruelty-free products aligns perfectly with current market trends and the sophisticated demands of both residents and tourists in our luxury market.</p>
+        <div class="image-placeholder">
+            <img src="https://debleusupply.ky/wp-content/uploads/presentation/Vegan-Makeup-Products.jpg" alt="Vegan Makeup Products" id="palladio-partnership-image">
+        </div>
+    </div>
+    
+    <!-- Slide 7 -->
+    <div class="slide">
+      <h2>Beauty and Wellness Market</h2>
+      <p>The global beauty market was valued at <strong>$446 billion in 2023</strong> and is projected to reach <strong>$829.2 billion by 2033</strong> with a CAGR of 6.88%.</p>
+      <p>The Cayman Islands' luxury destination status offers a unique entry point for premium beauty brands, driven by tourism and wellness trends.</p>
       <table>
-        <tr><th>Segmento</th><th>Cuota de Mercado</th></tr>
-        <tr><td>Cuidado de la piel</td><td>40%</td></tr>
-        <tr><td>Cuidado del cabello</td><td>20%</td></tr>
-        <tr><td>Maquillaje</td><td>18%</td></tr>
-        <tr><td>Fragancias</td><td>12%</td></tr>
-        <tr><td>Otros</td><td>10%</td></tr>
+        <tr><th>Segment</th><th>Market Share</th></tr>
+        <tr><td>Skincare</td><td>40%</td></tr>
+        <tr><td>Haircare</td><td>20%</td></tr>
+        <tr><td>Makeup</td><td>18%</td></tr>
+        <tr><td>Fragrances</td><td>12%</td></tr>
+        <tr><td>Others</td><td>10%</td></tr>
       </table>
       <div class="chart-container">
         <canvas id="marketChart"></canvas>
       </div>
     </div>
 
-    <!-- Diapositiva 6 -->
+    <!-- NEW Slide 8 -->
     <div class="slide">
-      <h2>¿Por qué Asociarse con Nosotros?</h2>
+        <h2>Our Strong Client Network</h2>
+        <p>Our business is strong in nail and spa products. We are the trusted supplier for the leading salons in the Cayman Islands, including:</p>
+        <ul>
+            <li>Beauty Nail Salons</li>
+            <li>Hair Salons</li>
+            <li>Get Nails</li>
+            <li>Tips and Toes</li>
+            <li>Nails Room</li>
+            <li>Fosu Hair & Beauty</li>
+            <li>Cappelli (#1 Nails Beauty Shop in Cayman Islands)</li>
+        </ul>
+        <div class="image-placeholder">
+            <img src="https://debleusupply.ky/wp-content/uploads/presentation/Salon_Interior.jpg" alt="Salon Interior" id="client-network-image">
+        </div>
+    </div>
+
+    <!-- NEW Slide 9 -->
+    <div class="slide">
+        <h2>Go-To-Market Strategy</h2>
+        <p>Our business plan is simple and effective. Upon partnership, we will immediately launch a <span class="highlight">dedicated Palladio Beauty stand</span> inside our own high-traffic retail shop.</p>
+        <p>This ensures instant brand visibility, allows customers to test products, and establishes a strong market presence from day one.</p>
+        <div class="image-placeholder">
+            <img src="https://debleusupply.ky/wp-content/uploads/presentation/Retail_Display_Stan.jpg" alt="Retail Display Stand" id="go-to-market-image">
+        </div>
+    </div>
+
+    <!-- NEW Slide 10 -->
+    <div class="slide">
+        <h2>Logistics & Operations</h2>
+        <p>We have a streamlined and reliable logistics process. We work with our own trusted forwarder, <span class="highlight">Seaboard Marine in Medley, Florida</span>, ensuring smooth and timely shipments to the island.</p>
+        <p>For payments, we are fully equipped to handle international transactions via <strong>wire transfer</strong>
+        👉 “Kindly be advised that the import duty rate for beauty products in the Cayman Islands is 22%.”.</p>
+        <div class="image-placeholder">
+            <img src="https://debleusupply.ky/wp-content/uploads/presentation/Logistics_and_Shipping.jpg" alt="Logistics and Shipping" id="logistics-image">
+        </div>
+    </div>
+
+    <!-- Slide 11 -->
+    <div class="slide">
+      <h2>Why Partner with Us?</h2>
       <ul>
-        <li>Presencia establecida en las Islas Caimán por más de 15 años</li>
-        <li>Confiables para profesionales y consumidores por igual</li>
-        <li>Amplio portafolio de marcas de belleza internacionales</li>
-        <li>Fuerte red de logística y venta al por menor</li>
-        <li>Solución integral para profesionales</li>
-        <li>Fuertes en productos de uñas y spa, sirviendo a Salones de Uñas y Peluquerías</li>
-        <li>Enfocados en expandirnos en <strong>Maquillaje Vegano</strong>, alineándonos con las tendencias globales</li>
+        <li>Established presence in the Cayman Islands for over 15 years</li>
+        <li>Trusted by professionals and consumers alike</li>
+        <li>Broad portfolio of international beauty brands</li>
+        <li>Strong, established logistics and retail network</li>
+        <li>One-stop solution for professionals with a proven client base</li>
+        <li>Strong in nail and spa products, serving top Nail Salons and Hair Salons</li>
+        <li>Focused on expanding into <strong>Vegan Makeup</strong>, aligning with global trends</li>
       </ul>
       <div class="image-placeholder">
-        <img src="https://placehold.co/800x450/8a2be2/ffffff?text=Asociación+Beneficiosa" alt="Imagen de una asociación">
+        <img src="https://debleusupply.ky/wp-content/uploads/presentation/why-partner.jpg" alt="Image of a partnership" id="why-partner-image">
       </div>
     </div>
 
-    <!-- Diapositiva 7 -->
+    <!-- Slide 12 -->
     <div class="slide">
-      <h2>Próximos Pasos</h2>
+      <h2>Next Steps</h2>
       <ol>
-        <li>Realizar una investigación más profunda del consumidor</li>
-        <li>Desarrollar una estrategia de marketing a medida</li>
-        <li>Definir los términos para la distribución exclusiva</li>
-        <li>Lanzar eventos promocionales y lanzamientos de productos</li>
+        <li>Develop a tailored marketing strategy for Palladio Beauty.</li>
+        <li>Define terms for an exclusive distribution agreement.</li>
+        <li>Coordinate initial product order and shipping logistics.</li>
+        <li>Launch the in-store promotional stand and marketing campaigns.</li>
       </ol>
-      <p><strong>Crecer juntos y llevar la belleza a las Islas Caimán con una asociación exclusiva.</strong></p>
+      <p><strong>Let's grow together and bring premier vegan beauty to the Cayman Islands.</strong></p>
       <div class="image-placeholder">
-        <img src="https://placehold.co/800x450/2c3e50/ffffff?text=Crecimiento+Futuro" alt="Imagen de crecimiento futuro">
+        <img src="https://debleusupply.ky/wp-content/uploads/presentation/future_growth.jpg" id="next-steps-image">
       </div>
     </div>
 
-    <!-- Navegación -->
+    <!-- Navigation -->
     <div class="buttons">
-      <button onclick="prevSlide()">Anterior</button>
-      <button onclick="nextSlide()">Siguiente</button>
+      <button onclick="prevSlide()">Previous</button>
+      <button onclick="nextSlide()">Next</button>
     </div>
+
+    <!-- Page Counter -->
+    <div id="page-counter"></div>
   </div>
 
   <script>
     let current = 0;
     const slides = document.querySelectorAll('.slide');
     const totalSlides = slides.length;
+    const pageCounter = document.getElementById('page-counter');
 
     function showSlide(index) {
       slides.forEach((s, i) => s.classList.remove('active'));
       slides[index].classList.add('active');
+      if (pageCounter) {
+        pageCounter.textContent = `${index + 1} / ${totalSlides}`;
+      }
       renderCharts(index);
     }
 
@@ -236,16 +324,20 @@
     const charts = {};
 
     function renderCharts(index) {
-      if (index === 2) {
+        // Find the correct index for the charts after adding new slides
+        const demographicsSlideIndex = Array.from(slides).findIndex(slide => slide.querySelector('#demographicsChart'));
+        const marketSlideIndex = Array.from(slides).findIndex(slide => slide.querySelector('#marketChart'));
+
+      if (index === demographicsSlideIndex) {
         if (!charts.demographics) {
           const ctx = document.getElementById('demographicsChart').getContext('2d');
           charts.demographics = new Chart(ctx, {
             type: 'bar',
             data: {
-              labels: ['Población', 'Turismo'],
+              labels: ['Population', 'Tourism (visitors)'],
               datasets: [{
-                label: 'Crecimiento estimado',
-                data: [84700, 235000], // Datos de ejemplo
+                label: 'Cayman Islands Key Figures',
+                data: [75000, 235000], // Updated data
                 backgroundColor: ['rgba(42, 42, 114, 0.8)', 'rgba(15, 155, 142, 0.8)'],
                 borderColor: ['rgba(42, 42, 114, 1)', 'rgba(15, 155, 142, 1)'],
                 borderWidth: 1
@@ -258,7 +350,7 @@
                 legend: { display: false },
                 title: {
                   display: true,
-                  text: 'Población y Crecimiento de Turismo (2023)',
+                  text: 'Population and Tourism (2023)',
                   color: '#2a2a72'
                 }
               },
@@ -270,13 +362,13 @@
             }
           });
         }
-      } else if (index === 4) {
+      } else if (index === marketSlideIndex) {
         if (!charts.market) {
           const ctx = document.getElementById('marketChart').getContext('2d');
           const data = {
-            labels: ['Cuidado de la piel', 'Cuidado del cabello', 'Maquillaje', 'Fragancias', 'Otros'],
+            labels: ['Skincare', 'Haircare', 'Makeup', 'Fragrances', 'Others'],
             datasets: [{
-              label: 'Cuota de Mercado (%)',
+              label: 'Market Share (%)',
               data: [40, 20, 18, 12, 10],
               backgroundColor: [
                 '#2a2a72',
@@ -301,7 +393,7 @@
                 },
                 title: {
                   display: true,
-                  text: 'Cuota del Mercado Global de Belleza (2023)',
+                  text: 'Global Beauty Market Share (2023)',
                   color: '#2a2a72'
                 }
               }
@@ -312,10 +404,11 @@
       }
     }
     
-    // Inicia la presentación en la primera diapositiva
+    // Initialize the presentation on the first slide
     window.onload = function() {
         showSlide(0);
     }
   </script>
 </body>
 </html>
+
